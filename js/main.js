@@ -85,7 +85,7 @@ class VirtualAquariumGame {
     }
 
     // Initialize shop
-    window.shopManager.populateShop();
+    window.shopManager.initializeShop();
 
     // Initialize collection
     window.collectionManager.updateCollection();
@@ -368,6 +368,12 @@ function feedFish() {
       100,
       window.game.gameState.fishHappiness + 30
     );
+
+    // Visual effects
+    if (window.aquariumManager) {
+      window.aquariumManager.feedFish();
+    }
+
     window.notificationManager.show(
       "Fish are happy and well-fed! 🐟",
       "success"
@@ -380,6 +386,12 @@ function feedFish() {
 function cleanTank() {
   if (window.game.spendCoins(15)) {
     window.game.gameState.tankCleanliness = 100;
+
+    // Visual effects
+    if (window.aquariumManager) {
+      window.aquariumManager.cleanTank();
+    }
+
     window.notificationManager.show("Tank is sparkling clean! ✨", "success");
   } else {
     window.notificationManager.show("Not enough coins!", "error");

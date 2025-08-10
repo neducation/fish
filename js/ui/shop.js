@@ -6,10 +6,19 @@ class ShopManager {
     this.refreshInterval = 300000; // 5 minutes
     this.lastRefresh = 0;
 
-    this.initializeShop();
+    // Don't initialize immediately - let main.js call initializeShop
   }
 
   initializeShop() {
+    // Only initialize if fishSpecies is available
+    if (!window.fishSpecies) {
+      console.warn(
+        "ShopManager: fishSpecies not available, delaying initialization"
+      );
+      setTimeout(() => this.initializeShop(), 100);
+      return;
+    }
+
     this.generateShopItems();
     this.populateShop();
 
@@ -304,7 +313,7 @@ class ShopManager {
   }
 
   addSpecialOffer(species, discount = 0.5) {
-    const fishData = fishSpecies[species];
+    const fishData = window.fishSpecies[species];
     const discountedPrice = Math.floor(fishData.basePrice * discount);
 
     const specialOffer = {
