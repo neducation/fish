@@ -1,0 +1,302 @@
+/* Premium Shop and Monetization Styles */
+
+/* Premium Shop Button */
+.shop-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  animation: premium-glow 2s infinite alternate;
+}
+
+.shop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes premium-glow {
+  0% {
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.6);
+  }
+}
+
+/* Premium Shop Modal */
+.premium-shop-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.premium-shop-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: white;
+  position: relative;
+}
+
+.premium-shop-content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.shop-category {
+  margin-bottom: 30px;
+}
+
+.shop-category h3 {
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.product-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.product-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #ffd93d;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Rewarded Ad Buttons */
+.ad-reward-btn {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  animation: ad-pulse 2s infinite;
+}
+
+@keyframes ad-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(78, 205, 196, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+.free-fish-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #ff9a9e, #fecfef);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.free-fish-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+}
+
+/* VIP Member Styling */
+.vip-member .game-header {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+}
+
+.vip-member .stats-bar {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Premium Fish Indicator */
+.premium-fish {
+  position: relative;
+}
+
+.premium-fish::after {
+  content: "💎";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 0.8em;
+  animation: premium-sparkle 2s infinite;
+}
+
+@keyframes premium-sparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+/* No Ads Indicator */
+.no-ads-user .ad-reward-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.no-ads-user .ad-reward-btn::after {
+  content: " (VIP Bonus)";
+}
+
+/* Loading States */
+.loading-purchase {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading-purchase::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success/Error Messages */
+.purchase-success {
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  animation: slide-in 0.5s ease;
+}
+
+.purchase-error {
+  background: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .premium-shop-content {
+    padding: 20px;
+    max-width: 95vw;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-item {
+    padding: 15px;
+  }
+
+  .shop-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Banner Ad Space */
+.banner-ad-space {
+  height: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+.banner-ad-space.hidden {
+  display: none;
+}

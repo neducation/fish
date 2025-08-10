@@ -1,0 +1,104 @@
+{
+  "breeding_combinations": {
+    "goldfish+clownfish": {
+      "result": "guppy",
+      "success_rate": 0.75,
+      "breeding_time": 35000,
+      "special_traits": ["hardy", "colorful"]
+    },
+    "angelfish+betta": {
+      "result": "discus",
+      "success_rate": 0.6,
+      "breeding_time": 55000,
+      "special_traits": ["elegant", "peaceful"]
+    },
+    "neon_tetra+guppy": {
+      "result": "mandarin",
+      "success_rate": 0.5,
+      "breeding_time": 50000,
+      "special_traits": ["small", "schooling", "bright"]
+    },
+    "discus+mandarin": {
+      "result": "arowana",
+      "success_rate": 0.4,
+      "breeding_time": 75000,
+      "special_traits": ["ancient", "wise", "large"]
+    },
+    "seahorse+angelfish": {
+      "result": "lionfish",
+      "success_rate": 0.3,
+      "breeding_time": 80000,
+      "special_traits": ["spiky", "majestic", "dangerous"]
+    },
+    "arowana+lionfish": {
+      "result": "koi_dragon",
+      "success_rate": 0.25,
+      "breeding_time": 100000,
+      "special_traits": ["legendary", "dragon", "fortune"]
+    },
+    "koi_dragon+phoenix_fish": {
+      "result": "leviathan",
+      "success_rate": 0.15,
+      "breeding_time": 150000,
+      "special_traits": ["colossal", "ancient", "oceanic", "mythical"]
+    },
+    "leviathan+unicorn_fish": {
+      "result": "cosmic_fish",
+      "success_rate": 0.1,
+      "breeding_time": 200000,
+      "special_traits": ["cosmic", "starlight", "infinite", "divine"]
+    },
+    "goldfish+goldfish": {
+      "result": "goldfish",
+      "success_rate": 0.9,
+      "breeding_time": 25000,
+      "special_traits": ["shiny"],
+      "mutation_chance": 0.2
+    },
+    "clownfish+clownfish": {
+      "result": "clownfish",
+      "success_rate": 0.9,
+      "breeding_time": 25000,
+      "special_traits": ["playful"],
+      "mutation_chance": 0.2
+    },
+    "betta+betta": {
+      "result": "betta",
+      "success_rate": 0.8,
+      "breeding_time": 30000,
+      "special_traits": ["aggressive", "beautiful"],
+      "mutation_chance": 0.25
+    }
+  },
+  "rare_combinations": {
+    "shiny_goldfish+shiny_clownfish": {
+      "result": "rainbow_guppy",
+      "success_rate": 0.6,
+      "breeding_time": 45000,
+      "special_traits": ["rainbow", "shiny", "magical"]
+    },
+    "ancient_arowana+wise_seahorse": {
+      "result": "time_fish",
+      "success_rate": 0.2,
+      "breeding_time": 120000,
+      "special_traits": ["temporal", "ancient", "wisdom", "mystical"]
+    }
+  },
+  "seasonal_combinations": {
+    "valentine_special": {
+      "any_fish+any_fish": {
+        "bonus_success_rate": 0.1,
+        "bonus_traits": ["love", "romantic"],
+        "active_dates": ["02-14"]
+      }
+    },
+    "halloween_special": {
+      "dark_fish+spiky_fish": {
+        "result": "phantom_fish",
+        "success_rate": 0.3,
+        "special_traits": ["ghostly", "spooky", "ethereal"],
+        "active_dates": ["10-31"]
+      }
+    }
+  }
+}

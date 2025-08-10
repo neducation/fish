@@ -1,0 +1,248 @@
+{
+  "fish_species": {
+    "common": {
+      "goldfish": {
+        "name": "Goldfish",
+        "emoji": "🐠",
+        "base_price": 20,
+        "breeding_time": 30000,
+        "description": "A classic aquarium fish, perfect for beginners",
+        "base_traits": ["orange", "friendly", "hardy"],
+        "habitat": "freshwater",
+        "size": "medium",
+        "temperament": "peaceful",
+        "care_level": "easy",
+        "diet": "omnivore"
+      },
+      "clownfish": {
+        "name": "Clownfish",
+        "emoji": "🐡",
+        "base_price": 25,
+        "breeding_time": 30000,
+        "description": "Colorful and energetic, loves anemones",
+        "base_traits": ["orange", "striped", "playful"],
+        "habitat": "saltwater",
+        "size": "small",
+        "temperament": "peaceful",
+        "care_level": "easy",
+        "diet": "omnivore"
+      },
+      "betta": {
+        "name": "Betta Fish",
+        "emoji": "🐟",
+        "base_price": 30,
+        "breeding_time": 35000,
+        "description": "Beautiful flowing fins, needs space",
+        "base_traits": ["colorful", "aggressive", "beautiful"],
+        "habitat": "freshwater",
+        "size": "small",
+        "temperament": "territorial",
+        "care_level": "moderate",
+        "diet": "carnivore"
+      }
+    },
+    "uncommon": {
+      "angelfish": {
+        "name": "Angelfish",
+        "emoji": "🐠",
+        "base_price": 50,
+        "breeding_time": 45000,
+        "description": "Majestic and peaceful, swims gracefully",
+        "base_traits": ["elegant", "silver", "graceful"],
+        "habitat": "freshwater",
+        "size": "large",
+        "temperament": "peaceful",
+        "care_level": "moderate",
+        "diet": "omnivore"
+      },
+      "neon_tetra": {
+        "name": "Neon Tetra",
+        "emoji": "🐟",
+        "base_price": 40,
+        "breeding_time": 40000,
+        "description": "Bright blue stripe, loves groups",
+        "base_traits": ["blue", "schooling", "small"],
+        "habitat": "freshwater",
+        "size": "tiny",
+        "temperament": "peaceful",
+        "care_level": "easy",
+        "diet": "omnivore"
+      },
+      "guppy": {
+        "name": "Fancy Guppy",
+        "emoji": "🐡",
+        "base_price": 45,
+        "breeding_time": 25000,
+        "description": "Vibrant colors, breeds easily",
+        "base_traits": ["colorful", "small", "prolific"],
+        "habitat": "freshwater",
+        "size": "tiny",
+        "temperament": "peaceful",
+        "care_level": "easy",
+        "diet": "omnivore"
+      }
+    },
+    "rare": {
+      "discus": {
+        "name": "Discus Fish",
+        "emoji": "🐠",
+        "base_price": 100,
+        "breeding_time": 60000,
+        "description": "King of the aquarium, needs pristine water",
+        "base_traits": ["round", "peaceful", "sensitive"],
+        "habitat": "freshwater",
+        "size": "large",
+        "temperament": "peaceful",
+        "care_level": "expert",
+        "diet": "omnivore"
+      },
+      "mandarin": {
+        "name": "Mandarin Fish",
+        "emoji": "🐟",
+        "base_price": 120,
+        "breeding_time": 65000,
+        "description": "Stunning patterns, very delicate",
+        "base_traits": ["psychedelic", "small", "shy"],
+        "habitat": "saltwater",
+        "size": "small",
+        "temperament": "peaceful",
+        "care_level": "expert",
+        "diet": "carnivore"
+      },
+      "seahorse": {
+        "name": "Seahorse",
+        "emoji": "🐴",
+        "base_price": 150,
+        "breeding_time": 70000,
+        "description": "Magical creature of the sea",
+        "base_traits": ["unique", "gentle", "mystical"],
+        "habitat": "saltwater",
+        "size": "medium",
+        "temperament": "peaceful",
+        "care_level": "expert",
+        "diet": "carnivore"
+      }
+    },
+    "epic": {
+      "arowana": {
+        "name": "Dragon Fish",
+        "emoji": "🐉",
+        "base_price": 300,
+        "breeding_time": 90000,
+        "description": "Ancient dragon spirit in fish form",
+        "base_traits": ["dragon", "large", "ancient"],
+        "habitat": "freshwater",
+        "size": "huge",
+        "temperament": "predatory",
+        "care_level": "expert",
+        "diet": "carnivore"
+      },
+      "lionfish": {
+        "name": "Lionfish",
+        "emoji": "🦁",
+        "base_price": 250,
+        "breeding_time": 85000,
+        "description": "Beautiful but dangerous predator",
+        "base_traits": ["spiky", "venomous", "majestic"],
+        "habitat": "saltwater",
+        "size": "medium",
+        "temperament": "aggressive",
+        "care_level": "expert",
+        "diet": "carnivore"
+      }
+    },
+    "legendary": {
+      "koi_dragon": {
+        "name": "Koi Dragon",
+        "emoji": "🐲",
+        "base_price": 500,
+        "breeding_time": 120000,
+        "description": "Legendary fish that brings fortune",
+        "base_traits": ["legendary", "wise", "powerful"],
+        "habitat": "mystical",
+        "size": "huge",
+        "temperament": "noble",
+        "care_level": "master",
+        "diet": "spiritual"
+      },
+      "phoenix_fish": {
+        "name": "Phoenix Fish",
+        "emoji": "🔥",
+        "base_price": 600,
+        "breeding_time": 150000,
+        "description": "Rises from the ashes of the ocean",
+        "base_traits": ["fire", "rebirth", "mystical"],
+        "habitat": "mystical",
+        "size": "large",
+        "temperament": "divine",
+        "care_level": "master",
+        "diet": "elemental"
+      }
+    },
+    "mythical": {
+      "leviathan": {
+        "name": "Baby Leviathan",
+        "emoji": "🐋",
+        "base_price": 1000,
+        "breeding_time": 200000,
+        "description": "Infant form of the legendary sea monster",
+        "base_traits": ["colossal", "ancient", "oceanic"],
+        "habitat": "abyssal",
+        "size": "massive",
+        "temperament": "primordial",
+        "care_level": "divine",
+        "diet": "cosmic"
+      },
+      "unicorn_fish": {
+        "name": "Unicorn Fish",
+        "emoji": "🦄",
+        "base_price": 1200,
+        "breeding_time": 250000,
+        "description": "Mythical fish of legend and dreams",
+        "base_traits": ["magical", "rainbow", "pure"],
+        "habitat": "ethereal",
+        "size": "large",
+        "temperament": "benevolent",
+        "care_level": "divine",
+        "diet": "dreams"
+      }
+    }
+  },
+  "special_variants": {
+    "shiny_variants": {
+      "description": "Rare shiny versions of common fish",
+      "chance": 0.01,
+      "value_multiplier": 3,
+      "special_effects": ["sparkle", "collector_attraction"]
+    },
+    "albino_variants": {
+      "description": "Rare albino versions with unique coloring",
+      "chance": 0.005,
+      "value_multiplier": 4,
+      "special_effects": ["unique_coloring", "breeding_bonus"]
+    },
+    "giant_variants": {
+      "description": "Unusually large specimens",
+      "chance": 0.008,
+      "value_multiplier": 2.5,
+      "special_effects": ["intimidation", "space_requirement"]
+    }
+  },
+  "habitat_requirements": {
+    "freshwater": {
+      "ph_range": [6.5, 7.5],
+      "temperature_range": [22, 26],
+      "decorations": ["plants", "rocks", "driftwood"]
+    },
+    "saltwater": {
+      "ph_range": [8.0, 8.4],
+      "temperature_range": [24, 28],
+      "decorations": ["coral", "live_rock", "anemones"]
+    },
+    "mystical": {
+      "ph_range": [7.0, 9.0],
+      "temperature_range": [20, 30],
+      "decorations": ["crystals", "runes", "magical_plants"]
+    }
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "color_patterns": {
+    "solid": {
+      "name": "Solid Color",
+      "rarity": 0.4,
+      "colors": [
+        "red",
+        "blue",
+        "yellow",
+        "green",
+        "orange",
+        "purple",
+        "white",
+        "black"
+      ]
+    },
+    "striped": {
+      "name": "Striped",
+      "rarity": 0.25,
+      "variations": ["horizontal", "vertical", "diagonal"],
+      "stripe_count": [2, 3, 4, 5]
+    },
+    "spotted": {
+      "name": "Spotted",
+      "rarity": 0.2,
+      "spot_sizes": ["small", "medium", "large"],
+      "spot_density": ["sparse", "moderate", "dense"]
+    },
+    "gradient": {
+      "name": "Gradient",
+      "rarity": 0.1,
+      "directions": ["horizontal", "vertical", "radial"],
+      "color_transitions": ["smooth", "banded"]
+    },
+    "marbled": {
+      "name": "Marbled",
+      "rarity": 0.04,
+      "intensity": ["light", "medium", "heavy"],
+      "colors": ["mixed", "complementary", "analogous"]
+    },
+    "iridescent": {
+      "name": "Iridescent",
+      "rarity": 0.008,
+      "effects": ["rainbow", "metallic", "opalescent"],
+      "coverage": ["partial", "full"]
+    },
+    "bioluminescent": {
+      "name": "Bioluminescent",
+      "rarity": 0.002,
+      "glow_colors": ["blue", "green", "purple", "cyan"],
+      "glow_patterns": ["spots", "stripes", "outline", "full"]
+    }
+  },
+  "fin_patterns": {
+    "standard": {
+      "name": "Standard Fins",
+      "rarity": 0.6,
+      "description": "Normal fin size and shape"
+    },
+    "long": {
+      "name": "Long Fins",
+      "rarity": 0.2,
+      "description": "Extended, flowing fins",
+      "effects": ["graceful_movement", "slower_speed"]
+    },
+    "double": {
+      "name": "Double Fins",
+      "rarity": 0.1,
+      "description": "Doubled fin structures",
+      "effects": ["unique_appearance", "breeding_interest"]
+    },
+    "crown": {
+      "name": "Crown Tail",
+      "rarity": 0.08,
+      "description": "Spiky, crown-like fin edges",
+      "effects": ["distinctive_look", "collector_value"]
+    },
+    "butterfly": {
+      "name": "Butterfly Fins",
+      "rarity": 0.015,
+      "description": "Large, wing-like fins",
+      "effects": ["stunning_display", "high_value"]
+    },
+    "veil": {
+      "name": "Veil Tail",
+      "rarity": 0.005,
+      "description": "Extremely long, flowing fins",
+      "effects": ["ethereal_beauty", "legendary_value"]
+    }
+  },
+  "scale_patterns": {
+    "regular": {
+      "name": "Regular Scales",
+      "rarity": 0.5,
+      "description": "Standard overlapping scales"
+    },
+    "metallic": {
+      "name": "Metallic Scales",
+      "rarity": 0.2,
+      "description": "Shiny, reflective scales",
+      "effects": ["light_reflection", "increased_value"]
+    },
+    "matte": {
+      "name": "Matte Scales",
+      "rarity": 0.15,
+      "description": "Non-reflective, smooth scales"
+    },
+    "rough": {
+      "name": "Rough Scales",
+      "rarity": 0.1,
+      "description": "Textured, bumpy scales",
+      "effects": ["unique_texture", "defensive_bonus"]
+    },
+    "crystalline": {
+      "name": "Crystalline Scales",
+      "rarity": 0.04,
+      "description": "Crystal-like transparent scales",
+      "effects": ["light_refraction", "magical_appearance"]
+    },
+    "armored": {
+      "name": "Armored Scales",
+      "rarity": 0.008,
+      "description": "Thick, plate-like scales",
+      "effects": ["protection", "intimidation"]
+    },
+    "ethereal": {
+      "name": "Ethereal Scales",
+      "rarity": 0.002,
+      "description": "Semi-transparent, ghostly scales",
+      "effects": ["mystical_aura", "phase_abilities"]
+    }
+  },
+  "special_markings": {
+    "none": {
+      "name": "No Special Markings",
+      "rarity": 0.7,
+      "description": "Clean, unmarked appearance"
+    },
+    "dots": {
+      "name": "Facial Dots",
+      "rarity": 0.15,
+      "description": "Small dots around the face",
+      "patterns": ["symmetrical", "random", "constellation"]
+    },
+    "stripes": {
+      "name": "Body Stripes",
+      "rarity": 0.1,
+      "description": "Distinctive body stripes",
+      "orientations": ["vertical", "horizontal", "spiral"]
+    },
+    "crown": {
+      "name": "Crown Marking",
+      "rarity": 0.03,
+      "description": "Crown-like marking on head",
+      "effects": ["nobility", "leadership"]
+    },
+    "star": {
+      "name": "Star Marking",
+      "rarity": 0.015,
+      "description": "Star-shaped marking",
+      "locations": ["forehead", "side", "tail"]
+    },
+    "runes": {
+      "name": "Runic Markings",
+      "rarity": 0.004,
+      "description": "Ancient runic symbols",
+      "effects": ["magical_power", "mystical_energy"]
+    },
+    "celestial": {
+      "name": "Celestial Markings",
+      "rarity": 0.001,
+      "description": "Constellation patterns",
+      "effects": ["cosmic_connection", "divine_blessing"]
+    }
+  },
+  "eye_patterns": {
+    "normal": {
+      "name": "Normal Eyes",
+      "rarity": 0.8,
+      "colors": ["black", "brown", "dark_blue"]
+    },
+    "bright": {
+      "name": "Bright Eyes",
+      "rarity": 0.12,
+      "colors": ["blue", "green", "amber", "red"]
+    },
+    "heterochromia": {
+      "name": "Different Colored Eyes",
+      "rarity": 0.05,
+      "combinations": ["blue_green", "amber_blue", "red_black"]
+    },
+    "glowing": {
+      "name": "Glowing Eyes",
+      "rarity": 0.02,
+      "colors": ["cyan", "purple", "gold", "silver"],
+      "effects": ["night_vision", "intimidation"]
+    },
+    "starlight": {
+      "name": "Starlight Eyes",
+      "rarity": 0.008,
+      "description": "Eyes that sparkle like stars",
+      "effects": ["cosmic_sight", "fortune_telling"]
+    },
+    "void": {
+      "name": "Void Eyes",
+      "rarity": 0.002,
+      "description": "Deep black eyes like the void",
+      "effects": ["mysterious_aura", "psychic_abilities"]
+    }
+  },
+  "pattern_combinations": {
+    "rainbow_iridescent": {
+      "required": ["rainbow", "iridescent"],
+      "result": "aurora_pattern",
+      "rarity": 0.0001,
+      "description": "Aurora-like shifting colors"
+    },
+    "bioluminescent_runes": {
+      "required": ["bioluminescent", "runes"],
+      "result": "glowing_runes",
+      "rarity": 0.00005,
+      "description": "Glowing runic markings"
+    },
+    "crystalline_starlight": {
+      "required": ["crystalline", "starlight"],
+      "result": "crystal_constellation",
+      "rarity": 0.00002,
+      "description": "Crystalline scales with starlight eyes"
+    }
+  },
+  "seasonal_patterns": {
+    "spring": {
+      "name": "Spring Bloom",
+      "active_months": [3, 4, 5],
+      "bonus_patterns": ["flower_markings", "pastel_colors"],
+      "rarity_boost": 1.5
+    },
+    "summer": {
+      "name": "Summer Radiance",
+      "active_months": [6, 7, 8],
+      "bonus_patterns": ["sun_markings", "bright_colors"],
+      "rarity_boost": 1.2
+    },
+    "autumn": {
+      "name": "Autumn Leaves",
+      "active_months": [9, 10, 11],
+      "bonus_patterns": ["leaf_markings", "warm_colors"],
+      "rarity_boost": 1.3
+    },
+    "winter": {
+      "name": "Winter Crystal",
+      "active_months": [12, 1, 2],
+      "bonus_patterns": ["snowflake_markings", "ice_colors"],
+      "rarity_boost": 1.4
+    }
+  }
+}

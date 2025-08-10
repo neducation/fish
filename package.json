@@ -1,0 +1,75 @@
+{
+  "name": "virtual-aquarium-paradise",
+  "displayName": "Virtual Aquarium Paradise",
+  "version": "1.0.0",
+  "description": "Collect, breed, and care for beautiful virtual fish in your own aquarium paradise!",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8080 --open=/",
+    "dev": "live-server --port=3000 --open=/",
+    "build": "cordova build",
+    "build-android": "cordova build android",
+    "build-ios": "cordova build ios",
+    "run-android": "cordova run android",
+    "run-ios": "cordova run ios",
+    "add-android": "cordova platform add android",
+    "add-ios": "cordova platform add ios",
+    "prepare": "cordova prepare",
+    "clean": "cordova clean",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": [
+    "game",
+    "aquarium",
+    "fish",
+    "breeding",
+    "collection",
+    "virtual-pet",
+    "html5",
+    "javascript",
+    "mobile",
+    "cordova",
+    "android",
+    "ios",
+    "monetization"
+  ],
+  "author": "Virtual Aquarium Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/virtual-aquarium-paradise.git"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "cordova": "^12.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "ca-app-pub-YOUR_ADMOB_APP_ID~YOUR_APP_ID"
+      },
+      "cordova-plugin-purchase": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-dialogs": {}
+    }
+  }
+}
