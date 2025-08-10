@@ -180,7 +180,11 @@ class SpinWheelManager {
     document.body.appendChild(modal);
     this.setupWheelTabs();
     this.currentWheel = "daily";
-    this.updateWheelDisplay();
+
+    // Only update if game is ready
+    if (window.game && window.game.gameState) {
+      this.updateWheelDisplay();
+    }
   }
 
   addWheelButtons() {
@@ -225,6 +229,11 @@ class SpinWheelManager {
   }
 
   updateWheelDisplay() {
+    // Check if game is ready
+    if (!window.game || !window.game.gameState) {
+      return;
+    }
+
     const wheel = this.wheels[this.currentWheel];
     const gameState = window.game.gameState;
 

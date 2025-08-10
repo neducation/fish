@@ -164,5 +164,4 @@ class AdManager {
   }
 }
 
-// Initialize Ad Manager
-window.adManager = new AdManager();
+// Ad Manager will be initialized by main.js

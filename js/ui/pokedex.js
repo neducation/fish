@@ -13,6 +13,7 @@ class PokedexManager {
       "mythical",
     ];
     this.currentFilter = "all";
+    this.pokedexElement = null;
     this.createPokedex();
   }
 
@@ -61,8 +62,13 @@ class PokedexManager {
     `;
 
     document.body.appendChild(pokedex);
+    this.pokedexElement = pokedex;
     this.setupFilters();
-    this.updatePokedex();
+
+    // Only update if game is ready
+    if (window.game && window.game.gameState) {
+      this.updatePokedex();
+    }
   }
 
   open() {
@@ -126,9 +132,15 @@ class PokedexManager {
   }
 
   getFilteredFish() {
-    const allSpecies = Object.keys(
-      fishSpecies.fish_species.common || fishSpecies
-    );
+    // Handle both data structures: nested (from JSON) or flat (from fish.js)
+    let allSpecies;
+    if (fishSpecies.fish_species && fishSpecies.fish_species.common) {
+      // Nested structure from JSON
+      allSpecies = Object.keys(fishSpecies.fish_species.common);
+    } else {
+      // Flat structure from fish.js
+      allSpecies = Object.keys(fishSpecies);
+    }
 
     if (this.currentFilter === "all") {
       return allSpecies;
@@ -140,6 +152,11 @@ class PokedexManager {
   }
 
   updatePokedex() {
+    // Check if game is ready
+    if (!window.game || !window.game.gameState) {
+      return;
+    }
+
     const collection = window.game.gameState.collection;
     const filteredFish = this.getFilteredFish();
     const totalPages = Math.ceil(filteredFish.length / this.fishPerPage);

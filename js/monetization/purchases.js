@@ -209,18 +209,18 @@ class PurchaseManager {
 
   // Check if user has specific purchases
   hasRemoveAds() {
-    return window.game.gameState.adsRemoved || false;
+    return window.game?.gameState?.adsRemoved || false;
   }
 
   hasVipMembership() {
+    if (!window.game?.gameState) return false;
     const gameState = window.game.gameState;
     return gameState.vipMembership && gameState.vipExpiry > Date.now();
   }
 
   hasBreedingBoost() {
-    return window.game.gameState.breedingBoost || false;
+    return window.game?.gameState?.breedingBoost || false;
   }
 }
 
-// Initialize Purchase Manager
-window.purchaseManager = new PurchaseManager();
+// Purchase Manager will be initialized by main.js

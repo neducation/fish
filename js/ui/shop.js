@@ -29,7 +29,7 @@ class ShopManager {
     });
 
     // Add random selection of other fish
-    const availableFish = Object.keys(fishSpecies).filter(
+    const availableFish = Object.keys(window.fishSpecies || {}).filter(
       (species) => !commonFish.includes(species)
     );
 
@@ -51,7 +51,7 @@ class ShopManager {
     const weightedList = [];
 
     availableSpecies.forEach((species) => {
-      const rarity = fishSpecies[species].rarity;
+      const rarity = window.fishSpecies[species].rarity;
       const weight = this.getRarityWeight(rarity);
 
       for (let i = 0; i < weight; i++) {
@@ -76,7 +76,7 @@ class ShopManager {
   }
 
   createShopItem(species) {
-    const fishData = fishSpecies[species];
+    const fishData = window.fishSpecies[species];
     const basePrice = fishData.basePrice;
 
     // Add price variation (±20%)
@@ -166,7 +166,7 @@ class ShopManager {
 
     if (item.species) {
       // Fish item
-      const fishData = fishSpecies[item.species];
+      const fishData = window.fishSpecies[item.species];
       const traitsText =
         item.traits.length > 0 ? ` (${item.traits.join(", ")})` : "";
 
@@ -237,7 +237,7 @@ class ShopManager {
         traits: item.traits,
       });
 
-      const fishData = fishSpecies[item.species];
+      const fishData = window.fishSpecies[item.species];
       window.notificationManager.show(
         `Bought ${fishData.name}! Welcome to your aquarium! 🐠`,
         "success"

@@ -73,7 +73,13 @@ class VirtualAquariumGame {
     window.pokedexManager = new PokedexManager();
     window.spinWheelManager = new SpinWheelManager();
 
-    // Initialize monetization UI if available
+    // Initialize monetization managers if available
+    if (typeof PurchaseManager !== "undefined") {
+      window.purchaseManager = new PurchaseManager();
+    }
+    if (typeof AdManager !== "undefined") {
+      window.adManager = new AdManager();
+    }
     if (typeof MonetizationUI !== "undefined") {
       window.monetizationUI = new MonetizationUI();
     }
@@ -257,6 +263,14 @@ class VirtualAquariumGame {
       return true;
     }
     return false;
+  }
+
+  showNotification(message, type = "info") {
+    if (window.notificationManager) {
+      window.notificationManager.show(message, type);
+    } else {
+      console.log(`[${type.toUpperCase()}] ${message}`);
+    }
   }
 
   autoSave() {
