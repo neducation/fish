@@ -69,11 +69,29 @@ class VirtualAquariumGame {
     window.breedingManager = new BreedingManager();
     window.aquariumManager = new AquariumManager();
 
+    // Initialize collector feature managers
+    window.pokedexManager = new PokedexManager();
+    window.spinWheelManager = new SpinWheelManager();
+
+    // Initialize monetization UI if available
+    if (typeof MonetizationUI !== "undefined") {
+      window.monetizationUI = new MonetizationUI();
+    }
+
     // Initialize shop
     window.shopManager.populateShop();
 
     // Initialize collection
     window.collectionManager.updateCollection();
+
+    // Initialize collector features
+    if (window.pokedexManager) {
+      window.pokedexManager.addPokedexButton();
+    }
+
+    if (window.spinWheelManager) {
+      window.spinWheelManager.updateDailySpinButton();
+    }
 
     // Update all displays
     this.updateDisplay();
@@ -428,15 +446,38 @@ function showHelp() {
 🧽 Clean: Maintain tank cleanliness (15 coins)
 🌱 Decorate: Add beautiful decorations (25 coins)
 👤 Collector: Attract visitors for bonus coins (50 coins)
+🎰 Daily Spin: Free daily rewards!
+� Encyclopedia: Track your collection progress
 
-💡 Tips:
+�💡 Tips:
 - Rare fish give more reputation
 - Happy fish breed better
 - Clean tanks attract collectors
+- Use the daily spin wheel for free rewards
+- Complete the encyclopedia for achievements
 - Save regularly!
     `;
 
   alert(helpText);
+}
+
+// New collector functions
+function openPokedex() {
+  if (window.pokedexManager) {
+    window.pokedexManager.open();
+  }
+}
+
+function openDailyWheel() {
+  if (window.spinWheelManager) {
+    window.spinWheelManager.open("daily");
+  }
+}
+
+function openPremiumWheel() {
+  if (window.spinWheelManager) {
+    window.spinWheelManager.open("premium");
+  }
 }
 
 function selectBreedingSlot(slotNumber) {

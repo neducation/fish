@@ -230,7 +230,4 @@ class MonetizationUI {
   }
 }
 
-// Initialize monetization UI
-document.addEventListener("DOMContentLoaded", () => {
-  window.monetizationUI = new MonetizationUI();
-});
+// Monetization UI will be initialized by main.js

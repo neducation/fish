@@ -82,6 +82,122 @@
         "diet": "omnivore"
       }
     },
+    "legendary": {
+      "dragonfish": {
+        "name": "Mystical Dragonfish",
+        "emoji": "🐲",
+        "base_price": 2500,
+        "breeding_time": 300000,
+        "description": "A legendary fish with the power of ancient dragons. Extremely rare.",
+        "base_traits": ["mystical", "large", "fire_breath"],
+        "habitat": "mystical",
+        "size": "large",
+        "temperament": "majestic",
+        "care_level": "expert",
+        "diet": "carnivore",
+        "unlock_condition": "breed_fire_water_combo"
+      },
+      "phoenix_fish": {
+        "name": "Phoenix Firefish",
+        "emoji": "🔥",
+        "base_price": 5000,
+        "breeding_time": 600000,
+        "description": "Born from flames, this fish can regenerate and brings good fortune.",
+        "base_traits": ["phoenix", "regeneration", "luck"],
+        "habitat": "mystical",
+        "size": "medium",
+        "temperament": "divine",
+        "care_level": "master",
+        "diet": "energy",
+        "unlock_condition": "achieve_legendary_breeder"
+      },
+      "crystal_fish": {
+        "name": "Crystal Prism Fish",
+        "emoji": "💎",
+        "base_price": 3000,
+        "breeding_time": 450000,
+        "description": "A fish made of living crystal that refracts light into beautiful patterns.",
+        "base_traits": ["crystal", "light_refraction", "valuable"],
+        "habitat": "mystical",
+        "size": "medium",
+        "temperament": "serene",
+        "care_level": "expert",
+        "diet": "light",
+        "unlock_condition": "collect_50_species"
+      },
+      "rainbow_fish": {
+        "name": "Prismatic Rainbow Fish",
+        "emoji": "🌈",
+        "base_price": 4000,
+        "breeding_time": 480000,
+        "description": "Contains all colors of the spectrum. Said to grant wishes.",
+        "base_traits": ["rainbow", "wish_granting", "multicolor"],
+        "habitat": "mystical",
+        "size": "medium",
+        "temperament": "magical",
+        "care_level": "expert",
+        "diet": "starlight",
+        "unlock_condition": "breed_all_color_variants"
+      }
+    },
+    "mythical": {
+      "cosmic_fish": {
+        "name": "Cosmic Void Fish",
+        "emoji": "🌌",
+        "base_price": 10000,
+        "breeding_time": 1200000,
+        "description": "A fish from the depths of space, containing entire galaxies within its scales.",
+        "base_traits": ["cosmic", "spacetime", "infinite"],
+        "habitat": "mystical",
+        "size": "transcendent",
+        "temperament": "cosmic",
+        "care_level": "impossible",
+        "diet": "stardust",
+        "unlock_condition": "breed_during_solar_eclipse"
+      },
+      "time_fish": {
+        "name": "Temporal Chronos Fish",
+        "emoji": "⏰",
+        "base_price": 15000,
+        "breeding_time": 2400000,
+        "description": "Controls the flow of time itself. Watching it ages backwards.",
+        "base_traits": ["temporal", "time_manipulation", "ageless"],
+        "habitat": "mystical",
+        "size": "timeless",
+        "temperament": "ancient",
+        "care_level": "impossible",
+        "diet": "moments",
+        "unlock_condition": "breed_for_1000_hours_total"
+      },
+      "void_fish": {
+        "name": "Abyssal Void Fish",
+        "emoji": "🕳️",
+        "base_price": 20000,
+        "breeding_time": 3600000,
+        "description": "Exists between dimensions. Looking at it reveals the secrets of the universe.",
+        "base_traits": ["void", "dimensional", "truth_revealing"],
+        "habitat": "mystical",
+        "size": "infinite",
+        "temperament": "unknowable",
+        "care_level": "impossible",
+        "diet": "concepts",
+        "unlock_condition": "achieve_100_percent_collection"
+      },
+      "god_fish": {
+        "name": "Divine Creator Fish",
+        "emoji": "✨",
+        "base_price": 50000,
+        "breeding_time": 7200000,
+        "description": "The first fish, from which all others were created. Grants ultimate wisdom.",
+        "base_traits": ["divine", "creation", "omniscient"],
+        "habitat": "mystical",
+        "size": "omnipresent",
+        "temperament": "benevolent",
+        "care_level": "transcendent",
+        "diet": "prayers",
+        "unlock_condition": "secret_combination_777"
+      }
+    },
     "rare": {
       "discus": {
         "name": "Discus Fish",
