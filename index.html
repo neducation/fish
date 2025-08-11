@@ -11,43 +11,232 @@
     <link rel="stylesheet" href="css/collector.css" />
   </head>
   <body>
-    <div class="game-container">
-      <!-- Header Section -->
-      <header class="game-header">
-        <h1>🐠 Virtual Aquarium Paradise 🐠</h1>
-        <div class="stats-bar">
+    <div class="mobile-game-container">
+      <!-- Header Stats -->
+      <header class="mobile-header">
+        <div class="stats-row">
           <div class="stat">
             <span class="stat-icon">💰</span>
-            <span class="stat-label">Coins:</span>
             <span class="stat-value" id="coins">1000</span>
           </div>
           <div class="stat">
             <span class="stat-icon">🐟</span>
-            <span class="stat-label">Fish:</span>
             <span class="stat-value" id="fishCount">0</span>
           </div>
           <div class="stat">
             <span class="stat-icon">⭐</span>
-            <span class="stat-label">Reputation:</span>
             <span class="stat-value" id="reputation">0</span>
           </div>
           <div class="stat">
             <span class="stat-icon">🏆</span>
-            <span class="stat-label">Collection:</span>
             <span class="stat-value" id="collectionProgress">0/30</span>
           </div>
         </div>
       </header>
 
-      <!-- Main Game Area -->
-      <div class="main-content">
-        <!-- Aquarium Section -->
-        <section class="aquarium-section">
-          <div class="aquarium" id="aquarium">
-            <div class="water-surface"></div>
-            <div class="bubbles-container" id="bubblesContainer"></div>
-            <div class="aquarium-floor"></div>
+      <!-- Tab Navigation -->
+      <nav class="tab-navigation">
+        <button class="tab-btn active" data-tab="tank">
+          <span>🐠</span>
+          <span>Tank</span>
+        </button>
+        <button class="tab-btn" data-tab="shop">
+          <span>🏪</span>
+          <span>Shop</span>
+        </button>
+        <button class="tab-btn" data-tab="breed">
+          <span>🧬</span>
+          <span>Breed</span>
+        </button>
+        <button class="tab-btn" data-tab="book">
+          <span>�</span>
+          <span>Book</span>
+        </button>
+        <button class="tab-btn" data-tab="fish">
+          <span>🎒</span>
+          <span>Fish</span>
+        </button>
+      </nav>
+
+      <!-- Tab Content Areas -->
+      <main class="tab-content-container">
+        
+        <!-- Aquarium Tab -->
+        <section class="tab-content active" id="aquarium-tab">
+          <div class="aquarium-wrapper">
+            <div class="aquarium" id="aquarium">
+              <div class="water-surface"></div>
+              <div class="bubbles-container" id="bubblesContainer"></div>
+              <div class="aquarium-floor"></div>
+            </div>
           </div>
+          
+          <!-- Quick Action Buttons -->
+          <div class="quick-actions">
+            <button class="action-btn" data-action="feed">
+              <span>🍎</span>
+              <span>Feed</span>
+              <small>10💰</small>
+            </button>
+            <button class="action-btn" data-action="clean">
+              <span>🧽</span>
+              <span>Clean</span>
+              <small>15💰</small>
+            </button>
+            <button class="action-btn" data-action="decorate">
+              <span>🌱</span>
+              <span>Decorate</span>
+              <small>25💰</small>
+            </button>
+            <button class="action-btn" data-action="collector">
+              <span>👤</span>
+              <span>Collector</span>
+              <small>50💰</small>
+            </button>
+          </div>
+
+          <!-- Tank Status -->
+          <div class="tank-status">
+            <div class="status-bar">
+              <span>🧼 Cleanliness:</span>
+              <div class="progress-bar">
+                <div class="progress-fill" id="cleanlinessBar"></div>
+              </div>
+              <span id="tankCleanliness">100%</span>
+            </div>
+            <div class="status-bar">
+              <span>😊 Happiness:</span>
+              <div class="progress-bar">
+                <div class="progress-fill" id="happinessBar"></div>
+              </div>
+              <span id="fishHappiness">100%</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Shop Tab -->
+        <section class="tab-content" id="shop-tab">
+          <div class="shop-header">
+            <h3>🏪 Fish Shop</h3>
+            <button class="refresh-btn" onclick="window.shopManager?.refreshShop()">🔄</button>
+          </div>
+          <div class="shop-grid" id="shopGrid">
+            <!-- Shop items populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Breeding Tab -->
+        <section class="tab-content" id="breeding-tab">
+          <div class="breeding-header">
+            <h3>🧬 Breeding Laboratory</h3>
+          </div>
+          
+          <div class="breeding-area">
+            <div class="breeding-slots">
+              <div class="breeding-slot" id="parent1" onclick="selectBreedingSlot(1)">
+                <span class="slot-label">Parent 1</span>
+              </div>
+              <div class="breeding-heart">💕</div>
+              <div class="breeding-slot" id="parent2" onclick="selectBreedingSlot(2)">
+                <span class="slot-label">Parent 2</span>
+              </div>
+            </div>
+            
+            <button class="breed-btn" onclick="breedFish()">
+              <span>🥚</span> Start Breeding
+            </button>
+            
+            <div class="breeding-queue" id="breedingQueue">
+              <!-- Breeding progress populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="breeding-tips">
+            <h4>💡 Breeding Tips</h4>
+            <ul>
+              <li>Higher rarity fish create rarer offspring</li>
+              <li>Similar traits increase success rates</li>
+              <li>Check your Pokédex for combinations</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Collection/Pokédex Tab -->
+        <section class="tab-content" id="collection-tab">
+          <div class="collection-header">
+            <div class="header-buttons">
+              <button class="pokedex-btn" onclick="openPokedex()">
+                📖 Pokédex
+              </button>
+              <button class="wheel-btn" onclick="openDailyWheel()">
+                🎰 Daily Spin
+              </button>
+            </div>
+          </div>
+          
+          <div class="achievements-section">
+            <h4>🏆 Achievements</h4>
+            <div class="achievements-grid" id="achievementsGrid">
+              <!-- Achievements populated by JavaScript -->
+            </div>
+          </div>
+          
+          <div class="collection-stats">
+            <div class="stat-box">
+              <span class="stat-number" id="totalSpecies">0</span>
+              <span class="stat-label">Species Found</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number" id="rareCount">0</span>
+              <span class="stat-label">Rare Fish</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number" id="legendaryCount">0</span>
+              <span class="stat-label">Legendary</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Inventory Tab -->
+        <section class="tab-content" id="inventory-tab">
+          <div class="inventory-header">
+            <h3>🎒 My Fish</h3>
+            <div class="sort-controls">
+              <select id="sortBy" onchange="window.inventoryManager?.sortInventory(this.value)">
+                <option value="rarity">Sort by Rarity</option>
+                <option value="name">Sort by Name</option>
+                <option value="recent">Sort by Recent</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="inventory-grid" id="inventoryGrid">
+            <!-- Inventory items populated by JavaScript -->
+          </div>
+          
+          <div class="inventory-actions">
+            <button class="bulk-action-btn" onclick="window.inventoryManager?.sellCommon()">
+              💰 Sell Common Fish
+            </button>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Floating Action Button -->
+      <button class="fab" onclick="openQuickMenu()" id="fabBtn">
+        ⚡
+      </button>
+
+      <!-- Quick Menu -->
+      <div class="quick-menu hidden" id="quickMenu">
+        <button onclick="saveGame()">💾 Save</button>
+        <button onclick="loadGame()">📁 Load</button>
+        <button onclick="resetGame()">🔄 Reset</button>
+        <button onclick="showHelp()">❓ Help</button>
+      </div>
+
+    </div>
 
           <!-- Aquarium Controls -->
           <div class="aquarium-controls">

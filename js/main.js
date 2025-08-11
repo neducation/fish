@@ -22,6 +22,7 @@ class VirtualAquariumGame {
     this.bubbleInterval = null;
     this.fishMovementInterval = null;
     this.tankDegradationInterval = null;
+    this.currentTab = "tank"; // Track current tab
 
     this.init();
   }
@@ -29,6 +30,7 @@ class VirtualAquariumGame {
   init() {
     const isNewGame = !this.loadGame();
     this.initializeUI();
+    this.initializeMobileUI(); // Initialize mobile UI features
 
     // Add starter fish for new players
     if (isNewGame) {
@@ -41,6 +43,116 @@ class VirtualAquariumGame {
     this.startTankDegradation();
 
     console.log("🐠 Virtual Aquarium Game initialized!");
+  }
+
+  // Initialize mobile UI features
+  initializeMobileUI() {
+    // Tab switching
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tabName = button.dataset.tab;
+        this.switchTab(tabName, button, tabButtons, tabContents);
+      });
+    });
+
+    // Floating Action Button
+    const fab = document.querySelector(".fab");
+    const quickMenu = document.querySelector(".quick-menu");
+
+    if (fab && quickMenu) {
+      fab.addEventListener("click", () => {
+        quickMenu.classList.toggle("hidden");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!fab.contains(e.target) && !quickMenu.contains(e.target)) {
+          quickMenu.classList.add("hidden");
+        }
+      });
+    }
+
+    // Quick action buttons
+    this.initializeQuickActions();
+  }
+
+  // Switch between tabs
+  switchTab(tabName, activeButton, allButtons, allContents) {
+    // Update buttons
+    allButtons.forEach((btn) => btn.classList.remove("active"));
+    activeButton.classList.add("active");
+
+    // Update content
+    allContents.forEach((content) => content.classList.remove("active"));
+    const targetContent = document.getElementById(`${tabName}-tab`);
+    if (targetContent) {
+      targetContent.classList.add("active");
+    }
+
+    this.currentTab = tabName;
+
+    // Trigger tab-specific updates
+    this.onTabSwitch(tabName);
+  }
+
+  // Handle tab switch events
+  onTabSwitch(tabName) {
+    switch (tabName) {
+      case "tank":
+        this.updateAquariumDisplay();
+        break;
+      case "shop":
+        if (window.shopManager) {
+          window.shopManager.refreshShop();
+        }
+        break;
+      case "breed":
+        // Update breeding interface
+        break;
+      case "book":
+        if (window.pokedexManager) {
+          window.pokedexManager.updatePokedex();
+        }
+        break;
+      case "fish":
+        // Update inventory
+        break;
+    }
+  }
+
+  // Initialize quick action buttons
+  initializeQuickActions() {
+    // Add event listeners for all action buttons
+    const actionButtons = document.querySelectorAll("[data-action]");
+    actionButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const action = button.dataset.action;
+        this.handleQuickAction(action);
+      });
+    });
+  }
+
+  // Handle quick action events
+  handleQuickAction(action) {
+    switch (action) {
+      case "feed":
+        this.feedFish();
+        break;
+      case "clean":
+        this.cleanTank();
+        break;
+      case "decorate":
+        this.addDecoration();
+        break;
+      case "collector":
+        this.attractCollector();
+        break;
+      default:
+        console.log("Unknown action:", action);
+    }
   }
 
   startGameLoop() {
